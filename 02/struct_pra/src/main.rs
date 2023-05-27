@@ -52,6 +52,8 @@ impl Point1 {
     }
 }
 
+fn add_one_func(x: u32)    -> u32 {x + 1}
+let add_one_func = |x: u32| -> u32 {x + 1};
 
 fn main() {
     let black = Color(0,0,0);
