@@ -51,4 +51,38 @@ fn main() {
         None => (),
     }
     println!("{:?}", num);
+
+    let (x, y, z) = (1,2,3);
+    let [a, b, c] = [4,5,6];
+    let (i, _ , _) = (7,8,9);
+    println!("xyz={} {} {}", x, y, z);
+    println!("abc={} {} {}", a, b, c);
+    println!(" i ={}",i);
+    
+    let point = (3,5);
+    print_coordinates(&point);
+
+    let a = Account {
+        name: String::from("name"), pass:String::from("pass")
+    };
+
+    let Account {ref name, ref pass} = a;
+    println!("{} {}", name, pass);
+    println!("{} {}", a.name, a.pass);
+
+    let some_u8_value = Some(3);
+    match some_u8_value {
+        Some(3) => println!("three"),
+        _ => (),
+    }
+    if let Some(3) = some_u8_value {
+        println!("three");
+    }
+
 }
+
+fn print_coordinates(&(x,y): &(i32,i32)){
+    println!("location: {} {}", x, y);
+}
+
+struct Account {name: String, pass: String}
